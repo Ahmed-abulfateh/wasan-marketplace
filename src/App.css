@@ -1966,6 +1966,29 @@ html[dir='rtl'] .auth-header {
   box-shadow: 0 8px 16px rgba(125, 68, 31, 0.2);
 }
 
+.card-actions .button,
+.vertical-actions .button,
+.orders-mobile-actions .button,
+.table-row-actions .button,
+.button.button-secondary,
+.button.button-ghost,
+.button.button-primary {
+  background: linear-gradient(180deg, #a25c2f, #8c4c24) !important;
+  border: 1px solid rgba(111, 62, 31, 0.78) !important;
+  color: #fff7ef !important;
+}
+
+.card-actions .button:hover,
+.vertical-actions .button:hover,
+.orders-mobile-actions .button:hover,
+.table-row-actions .button:hover,
+.button.button-secondary:hover,
+.button.button-ghost:hover,
+.button.button-primary:hover {
+  background: linear-gradient(180deg, #b0693a, #965127) !important;
+  border-color: rgba(111, 62, 31, 0.9) !important;
+}
+
 .button:hover,
 .button-primary:hover,
 .button-secondary:hover,

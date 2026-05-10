@@ -7,7 +7,10 @@ const normalizeImageUrl = (value: string) => {
     return ''
   }
 
-  const compactValue = trimmedValue.replace(/\s+/g, '')
+  const compactValue = trimmedValue
+    .replace(/^["']+|["']+$/g, '')
+    .replace(/,+$/g, '')
+    .replace(/\s+/g, '')
   const withProtocol = compactValue.startsWith('//') ? `https:${compactValue}` : compactValue
   const withHttpsForBareDomain = /^[a-z0-9.-]+\.[a-z]{2,}(?:\/|$)/i.test(withProtocol)
     ? `https://${withProtocol}`

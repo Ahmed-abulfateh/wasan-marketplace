@@ -332,6 +332,7 @@ function ProductPage() {
   const sellerInsights = buildSellerInsights(listing)
   const listingImages = getListingImages(listing)
   const [selectedGalleryIndex, setSelectedGalleryIndex] = useState(0)
+  const [failedGalleryIndexes, setFailedGalleryIndexes] = useState<number[]>([])
   const [selectedVariations, setSelectedVariations] = useState<Record<string, string>>({})
   const [reviewRating, setReviewRating] = useState(5)
   const [reviewComment, setReviewComment] = useState('')
@@ -341,6 +342,7 @@ function ProductPage() {
 
   useEffect(() => {
     setSelectedGalleryIndex(0)
+    setFailedGalleryIndexes([])
     setSelectedVariations(
       Object.fromEntries(
         details.variations.map((variation) => [
@@ -352,7 +354,14 @@ function ProductPage() {
   }, [language, listing.id])
 
   const activeGallery = details.gallery[selectedGalleryIndex] ?? details.gallery[0]
-  const activeProductImage = listingImages[selectedGalleryIndex] ?? listingImages[0] ?? ''
+  const preferredGalleryIndex =
+    listingImages[selectedGalleryIndex] && !failedGalleryIndexes.includes(selectedGalleryIndex)
+      ? selectedGalleryIndex
+      : listingImages.findIndex((_, index) => !failedGalleryIndexes.includes(index))
+  const activeProductImage =
+    preferredGalleryIndex >= 0 && preferredGalleryIndex < listingImages.length
+      ? listingImages[preferredGalleryIndex]
+      : ''
   const listingOrders = orders.filter((order) => order.listingId === listing.id)
   const buyerOrders = listingOrders.filter(
     (order) => order.buyerId === session?.id || order.buyer === session?.name,
@@ -415,6 +424,28 @@ function ProductPage() {
     }
   }
 
+  const handleMainImageError = () => {
+    if (preferredGalleryIndex < 0) {
+      return
+    }
+
+    setFailedGalleryIndexes((current) => {
+      if (current.includes(preferredGalleryIndex)) {
+        return current
+      }
+
+      return [...current, preferredGalleryIndex]
+    })
+
+    const nextIndex = listingImages.findIndex(
+      (_, index) => index > preferredGalleryIndex && !failedGalleryIndexes.includes(index),
+    )
+
+    if (nextIndex >= 0) {
+      setSelectedGalleryIndex(nextIndex)
+    }
+  }
+
   return (
     <main className="page-stack">
       <PageHero
@@ -446,6 +477,7 @@ function ProductPage() {
                 className="product-gallery-image"
                 src={activeProductImage}
                 alt={translateCatalogText(listing.title)}
+                onError={handleMainImageError}
               />
             ) : null}
             <p className="card-label">{pickText(activeGallery.label, language)}</p>
@@ -463,7 +495,16 @@ function ProductPage() {
                 className={index === selectedGalleryIndex ? 'gallery-thumb gallery-thumb-active' : 'gallery-thumb'}
                 onClick={() => setSelectedGalleryIndex(index)}
               >
-                {imageUrl ? <img className="gallery-thumb-image" src={imageUrl} alt={translateCatalogText(listing.title)} /> : null}
+                {imageUrl ? (
+                  <img
+                    className="gallery-thumb-image"
+                    src={imageUrl}
+                    alt={translateCatalogText(listing.title)}
+                    onError={(event) => {
+                      ;(event.currentTarget as HTMLImageElement).style.display = 'none'
+                    }}
+                  />
+                ) : null}
                 <strong>{pickText(item.label, language)}</strong>
                 <span>{pickText(item.note, language)}</span>
               </button>
