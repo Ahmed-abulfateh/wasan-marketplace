@@ -1953,6 +1953,88 @@ html[dir='rtl'] .auth-header {
     var(--panel-strong);
 }
 
+/* Unified brown controls for buyer, seller, and admin surfaces. */
+.button,
+.button-primary,
+.button-secondary,
+.button-ghost,
+.stock-save-button,
+.order-action {
+  background: linear-gradient(180deg, #a25c2f, #8c4c24);
+  border: 1px solid rgba(111, 62, 31, 0.72);
+  color: #fff7ef;
+  box-shadow: 0 8px 16px rgba(125, 68, 31, 0.2);
+}
+
+.button:hover,
+.button-primary:hover,
+.button-secondary:hover,
+.button-ghost:hover,
+.stock-save-button:hover,
+.order-action:hover {
+  background: linear-gradient(180deg, #b0693a, #965127);
+  border-color: rgba(111, 62, 31, 0.88);
+}
+
+.button:disabled,
+.button[aria-disabled='true'] {
+  background: #ceb39d;
+  border-color: #c29f84;
+  color: #fefaf6;
+  box-shadow: none;
+}
+
+.form-grid input,
+.form-grid select,
+.form-grid textarea,
+.search-field input,
+.search-field select,
+.stock-quantity-input,
+.checkout-panel input,
+.checkout-panel select,
+.checkout-panel textarea {
+  background: #fbf1e6;
+  border: 1px solid rgba(125, 68, 31, 0.34);
+  color: #2f1d13;
+}
+
+.form-grid input::placeholder,
+.form-grid textarea::placeholder,
+.search-field input::placeholder {
+  color: #8a6550;
+  opacity: 1;
+}
+
+.form-grid input:focus,
+.form-grid select:focus,
+.form-grid textarea:focus,
+.search-field input:focus,
+.search-field select:focus,
+.stock-quantity-input:focus {
+  border-color: rgba(162, 92, 47, 0.58);
+  box-shadow: 0 0 0 3px rgba(162, 92, 47, 0.18);
+}
+
+.table-shell {
+  border: 1px solid rgba(111, 73, 38, 0.24);
+  background: linear-gradient(180deg, rgba(255, 249, 242, 0.98), rgba(245, 231, 215, 0.96));
+}
+
+.orders-table th,
+.orders-table td {
+  border-bottom: 1px solid rgba(111, 73, 38, 0.16);
+  color: #3a2418;
+}
+
+.orders-table th {
+  background: rgba(168, 103, 58, 0.12);
+  color: #5b3824;
+}
+
+.orders-table tbody tr:hover {
+  background: rgba(162, 92, 47, 0.1);
+}
+
 @media (max-width: 960px) {
   .site-header,
   .site-footer,

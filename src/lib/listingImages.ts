@@ -7,8 +7,12 @@ const normalizeImageUrl = (value: string) => {
     return ''
   }
 
-  const withProtocol = trimmedValue.startsWith('//') ? `https:${trimmedValue}` : trimmedValue
-  const httpsPreferred = withProtocol.replace(/^http:\/\//i, 'https://')
+  const compactValue = trimmedValue.replace(/\s+/g, '')
+  const withProtocol = compactValue.startsWith('//') ? `https:${compactValue}` : compactValue
+  const withHttpsForBareDomain = /^[a-z0-9.-]+\.[a-z]{2,}(?:\/|$)/i.test(withProtocol)
+    ? `https://${withProtocol}`
+    : withProtocol
+  const httpsPreferred = withHttpsForBareDomain.replace(/^http:\/\//i, 'https://')
 
   try {
     const parsed = new URL(httpsPreferred)

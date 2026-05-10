@@ -72,8 +72,9 @@ button {
 
 button,
 input,
-textarea {
-  color-scheme: dark;
+textarea,
+select {
+  color-scheme: light;
 }
 
 h1,
