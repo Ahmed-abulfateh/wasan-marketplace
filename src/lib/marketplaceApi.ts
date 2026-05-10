@@ -10,7 +10,20 @@ import type {
 } from '../types'
 
 const TOKEN_KEY = 'signal-market-token'
-const API_BASE = (import.meta.env.VITE_API_URL as string | undefined) ?? ''
+const configuredApiBase = (import.meta.env.VITE_API_URL as string | undefined)?.trim()
+const API_BASE = configuredApiBase ? configuredApiBase.replace(/\/+$/, '') : ''
+
+const ensureApiConfigured = () => {
+  const isGitHubPages =
+    typeof window !== 'undefined' &&
+    window.location.hostname.endsWith('github.io')
+
+  if (import.meta.env.PROD && isGitHubPages && !API_BASE) {
+    throw new Error(
+      'Backend API is not configured. Set VITE_API_URL in GitHub repository Variables or Secrets to your Render backend URL.',
+    )
+  }
+}
 
 const readToken = () => window.localStorage.getItem(TOKEN_KEY)
 
@@ -24,6 +37,8 @@ const writeToken = (token: string | null) => {
 }
 
 const request = async <T>(path: string, init?: RequestInit): Promise<T> => {
+  ensureApiConfigured()
+
   const token = readToken()
   let response: Response
 
