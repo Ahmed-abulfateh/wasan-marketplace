@@ -786,8 +786,14 @@ html[dir='rtl'] .split-copy p {
 .queue-card {
   border: 1px solid var(--border-soft);
   border-radius: 20px;
-  background: rgba(22, 24, 28, 0.92);
+  background: linear-gradient(180deg, #4a2b1a 0%, #2f180f 100%);
+  color: #fff6ee;
   padding: 1.2rem;
+}
+
+.queue-card p {
+  color: inherit;
+  font-weight: 600;
 }
 
 .subnav-panel {
