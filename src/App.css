@@ -901,9 +901,9 @@ html[dir='rtl'] .split-copy p {
 .filter-chip {
   padding: 0.55rem 0.8rem;
   border-radius: 999px;
-  background: rgba(255, 247, 238, 0.9);
-  border: 1px solid rgba(111, 73, 38, 0.22);
-  color: #4d3323;
+  background: linear-gradient(180deg, #7a4528 0%, #5d321d 100%);
+  border: 1px solid #704126;
+  color: #fff3e6;
   font-size: 0.86rem;
   letter-spacing: 0.04em;
   cursor: pointer;
@@ -911,14 +911,14 @@ html[dir='rtl'] .split-copy p {
 }
 
 .filter-chip:hover {
-  background: rgba(162, 92, 47, 0.14);
-  border-color: rgba(111, 73, 38, 0.35);
-  color: #3a2418;
+  background: linear-gradient(180deg, #8a512f 0%, #6b3b22 100%);
+  border-color: #7f4b2d;
+  color: #fff8f1;
 }
 
 .filter-chip-active {
-  background: linear-gradient(180deg, #5b321e 0%, #432316 100%);
-  border-color: #704126;
+  background: linear-gradient(180deg, #4f2a19 0%, #381d12 100%);
+  border-color: #5f351f;
   color: #fff3e6;
 }
 
