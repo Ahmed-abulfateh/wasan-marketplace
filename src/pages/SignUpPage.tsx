@@ -56,7 +56,7 @@ function SignUpPage() {
           <input value={form.email} onChange={(event) => setForm((current) => ({ ...current, email: event.target.value }))} type="email" placeholder={copy.signUp.email} required />
           <input value={form.phone} onChange={(event) => setForm((current) => ({ ...current, phone: event.target.value }))} placeholder={copy.signUp.phone} required />
           <input value={form.password} onChange={(event) => setForm((current) => ({ ...current, password: event.target.value }))} type="password" placeholder={copy.signUp.password} required />
-          <label className="search-field" htmlFor="role-select">
+          <label className="search-field auth-role-field" htmlFor="role-select">
             <span className="section-kicker">{copy.signUp.role}</span>
             <select
               id="role-select"
