@@ -102,16 +102,6 @@
   image-rendering: -webkit-optimize-contrast;
 }
 
-.header-chatgpt-badge {
-  width: 44px;
-  height: 44px;
-  display: block;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 228, 206, 0.28);
-  background: rgba(255, 248, 240, 0.1);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
-}
-
 /* Search */
 .header-search-form {
   display: flex;
