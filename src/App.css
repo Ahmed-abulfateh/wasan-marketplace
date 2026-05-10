@@ -90,16 +90,22 @@
 .header-logo-link {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
   flex-shrink: 0;
   text-decoration: none;
 }
-.header-logo {
-  height: 110px;
-  width: auto;
-  display: block;
-  filter: brightness(0) invert(1);
-  image-rendering: -webkit-optimize-contrast;
+.header-brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 110px;
+  padding: 0 0.2rem;
+  color: #fff5ea;
+  font-family: var(--heading-font);
+  font-size: clamp(1.75rem, 2.2vw, 2.45rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  line-height: 1;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
 }
 
 /* Search */

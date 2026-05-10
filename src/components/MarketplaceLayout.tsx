@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
-import logoSrc from '../assets/logo-wasan.svg'
 import { useLanguage } from '../context/LanguageContext'
 import { useMarketplace } from '../context/MarketplaceContext'
 
@@ -44,7 +43,7 @@ function MarketplaceLayout() {
         {/* Top bar: logo + search + actions */}
         <div className="header-top">
           <Link to="/" className="header-logo-link">
-            <img src={logoSrc} alt={copy.layout.brand} className="header-logo" />
+            <span className="header-brand">{copy.layout.brand}</span>
           </Link>
 
           <form className="header-search-form" onSubmit={handleSearch} role="search">
