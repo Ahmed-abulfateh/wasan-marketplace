@@ -434,14 +434,14 @@ html[dir='rtl'] .header-profile-dropdown {
 }
 
 .auth-panel input {
-  background: #fffaf4;
+  background: #f4e1cf;
   border: 1.25px solid rgba(125, 68, 31, 0.34);
   color: #2f1d13;
   color-scheme: light;
 }
 
 .auth-panel select {
-  background: #fffaf4;
+  background: #f4e1cf;
   border: 1.25px solid rgba(125, 68, 31, 0.34);
   color: #2f1d13;
   color-scheme: light;
@@ -471,7 +471,7 @@ html[dir='rtl'] .header-profile-dropdown {
 .auth-panel input:-webkit-autofill:hover,
 .auth-panel input:-webkit-autofill:focus {
   -webkit-text-fill-color: #2f1d13;
-  box-shadow: 0 0 0 1000px #fffaf4 inset;
+  box-shadow: 0 0 0 1000px #f4e1cf inset;
 }
 
 .auth-role-field {
