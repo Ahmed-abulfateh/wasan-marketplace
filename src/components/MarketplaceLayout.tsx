@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
+import chatgptBadgeSrc from '../assets/chatgpt-badge.svg'
 import logoSrc from '../assets/logo-wasan.svg'
 import { useLanguage } from '../context/LanguageContext'
 import { useMarketplace } from '../context/MarketplaceContext'
@@ -45,6 +46,7 @@ function MarketplaceLayout() {
         <div className="header-top">
           <Link to="/" className="header-logo-link">
             <img src={logoSrc} alt={copy.layout.brand} className="header-logo" />
+            <img src={chatgptBadgeSrc} alt="ChatGPT" className="header-chatgpt-badge" />
           </Link>
 
           <form className="header-search-form" onSubmit={handleSearch} role="search">

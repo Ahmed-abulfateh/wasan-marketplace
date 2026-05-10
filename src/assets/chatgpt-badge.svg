@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">ChatGPT badge</title>
+  <desc id="desc">Decorative ChatGPT badge used in the site header.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8ede1"/>
+      <stop offset="1" stop-color="#ead2bc"/>
+    </linearGradient>
+  </defs>
+  <rect x="3" y="3" width="90" height="90" rx="18" fill="url(#bg)" stroke="#9b643f" stroke-width="3"/>
+  <g transform="translate(48 44)">
+    <circle r="18" fill="none" stroke="#2e1b11" stroke-width="3.2"/>
+    <path d="M0-25 11-19 11-7 0-1 -11-7 -11-19Z" fill="none" stroke="#2e1b11" stroke-width="3.2"/>
+    <path d="M21-11 21 1 11 7 0 1 0-11 11-17Z" fill="none" stroke="#2e1b11" stroke-width="3.2"/>
+    <path d="M11 19 0 25 -11 19 -11 7 0 1 11 7Z" fill="none" stroke="#2e1b11" stroke-width="3.2"/>
+    <path d="M-21 11 -21-1 -11-7 0-1 0 11 -11 17Z" fill="none" stroke="#2e1b11" stroke-width="3.2"/>
+  </g>
+  <text x="48" y="82" text-anchor="middle" fill="#472d1e" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="0.5">ChatGPT</text>
+</svg>

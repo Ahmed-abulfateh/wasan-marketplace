@@ -421,7 +421,7 @@ export const copyByLanguage: Record<Language, AppCopy> = {
       deletePrompt: (title) => `Delete "${title}"? This cannot be undone.`,
     },
     layout: {
-      brand: 'Wasan',
+      brand: 'Wasan ABAYA',
       tagline: 'Curated commerce for verified independent sellers.',
       nav: {
         home: 'Home',
@@ -860,7 +860,7 @@ export const copyByLanguage: Record<Language, AppCopy> = {
       deletePrompt: (title) => `هل تريد حذف "${title}"؟ لا يمكن التراجع عن هذا الإجراء.`,
     },
     layout: {
-      brand: 'وسن',
+      brand: 'وسن عباية',
       tagline: 'تجارة منسقة لبائعين مستقلين موثقين.',
       nav: {
         home: 'الرئيسية',
