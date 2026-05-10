@@ -92,9 +92,9 @@ function SignInPage() {
             <Link className="button button-ghost" to="/sign-up">{copy.signIn.createAccount}</Link>
           </div>
         </form>
-        <div className="section-divider" style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border)' }}>
+        <div className="section-divider auth-reset-panel">
           <p className="section-kicker">{copy.resetPassword.kicker}</p>
-          <p className="lead" style={{ marginBottom: '0.75rem' }}>{copy.signIn.resetLinkSummary}</p>
+          <p className="lead auth-reset-summary">{copy.signIn.resetLinkSummary}</p>
           {resetNotice ? (
             <p className={resetNotice.tone === 'success' ? 'form-notice form-notice-success' : 'form-notice form-notice-error'}>
               {resetNotice.message}
