@@ -901,24 +901,30 @@ html[dir='rtl'] .split-copy p {
 .filter-chip {
   padding: 0.55rem 0.8rem;
   border-radius: 999px;
-  background: rgba(22, 24, 28, 0.88);
-  border: 1px solid var(--border-soft);
-  color: var(--heading);
+  background: rgba(255, 247, 238, 0.9);
+  border: 1px solid rgba(111, 73, 38, 0.22);
+  color: #4d3323;
   font-size: 0.86rem;
   letter-spacing: 0.04em;
   cursor: pointer;
-  transition: background 150ms ease, border-color 150ms ease;
+  transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
 }
 
 .filter-chip:hover {
-  background: rgba(29, 155, 240, 0.1);
-  border-color: rgba(29, 155, 240, 0.3);
+  background: rgba(162, 92, 47, 0.14);
+  border-color: rgba(111, 73, 38, 0.35);
+  color: #3a2418;
 }
 
 .filter-chip-active {
-  background: rgba(29, 155, 240, 0.18);
-  border-color: rgba(29, 155, 240, 0.5);
-  color: #8ecdf8;
+  background: linear-gradient(180deg, #5b321e 0%, #432316 100%);
+  border-color: #704126;
+  color: #fff3e6;
+}
+
+.filter-chip:focus-visible {
+  outline: 2px solid rgba(162, 92, 47, 0.45);
+  outline-offset: 2px;
 }
 
 .listing-link,
