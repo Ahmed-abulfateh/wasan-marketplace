@@ -19,34 +19,50 @@ function ListingCard({ listing }: ListingCardProps) {
   const currentStatus = listingStatuses[listing.id] ?? listing.status
   const listingImages = getListingImages(listing)
   const [activeImageIndex, setActiveImageIndex] = useState(0)
+  const [failedImageIndexes, setFailedImageIndexes] = useState<number[]>([])
 
   useEffect(() => {
     setActiveImageIndex(0)
+    setFailedImageIndexes([])
   }, [listing.id])
 
-  useEffect(() => {
-    if (listingImages.length <= 1) {
+  const currentImageIndex = listingImages.findIndex((_, index) => index >= activeImageIndex && !failedImageIndexes.includes(index))
+  const fallbackImageIndex = listingImages.findIndex((_, index) => !failedImageIndexes.includes(index))
+  const resolvedImageIndex = currentImageIndex >= 0 ? currentImageIndex : fallbackImageIndex
+  const activeImage = resolvedImageIndex >= 0 ? listingImages[resolvedImageIndex] : ''
+
+  const handleImageError = () => {
+    if (resolvedImageIndex < 0) {
       return
     }
 
-    const timer = window.setInterval(() => {
-      setActiveImageIndex((current) => (current + 1) % listingImages.length)
-    }, 2200)
+    setFailedImageIndexes((current) => {
+      if (current.includes(resolvedImageIndex)) {
+        return current
+      }
 
-    return () => window.clearInterval(timer)
-  }, [listingImages])
+      return [...current, resolvedImageIndex]
+    })
+    setActiveImageIndex(resolvedImageIndex + 1)
+  }
 
   return (
     <article className="listing-card">
-      {listingImages.length > 0 ? (
+      {activeImage ? (
         <div className="listing-image-stage">
-          <img className="listing-image-media" src={listingImages[activeImageIndex]} alt={translateCatalogText(listing.title)} loading="lazy" />
+          <img
+            className="listing-image-media"
+            src={activeImage}
+            alt={translateCatalogText(listing.title)}
+            loading="lazy"
+            onError={handleImageError}
+          />
           {listingImages.length > 1 ? (
             <div className="listing-image-dots" aria-hidden="true">
               {listingImages.map((imageUrl, index) => (
                 <span
                   key={`${listing.id}-${imageUrl}`}
-                  className={index === activeImageIndex ? 'listing-image-dot listing-image-dot-active' : 'listing-image-dot'}
+                  className={index === resolvedImageIndex ? 'listing-image-dot listing-image-dot-active' : 'listing-image-dot'}
                 />
               ))}
             </div>

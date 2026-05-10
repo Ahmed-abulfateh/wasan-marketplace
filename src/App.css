@@ -1760,14 +1760,16 @@ html[dir='rtl'] .auth-header {
   display: grid;
   overflow: hidden;
   padding: 0;
-  border: 1px solid var(--border-soft);
+  border: 1px solid rgba(109, 66, 39, 0.22);
   border-radius: 22px;
-  background:
-    linear-gradient(180deg, rgba(18, 20, 24, 0.96), rgba(10, 12, 16, 0.96));
+  background: linear-gradient(180deg, #fff8f2 0%, #f5e6d8 100%);
+  color: #2f1d13;
+  box-shadow: 0 10px 24px rgba(58, 32, 20, 0.14);
 }
 
 .listing-image-stage {
   position: relative;
+  background: #f1dfce;
 }
 
 .listing-card-body {
@@ -1778,11 +1780,11 @@ html[dir='rtl'] .auth-header {
 .listing-image-placeholder {
   width: 100%;
   height: 11.5rem;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .listing-image-media {
-  border-bottom: 1px solid var(--border-soft);
+  border-bottom: 1px solid rgba(109, 66, 39, 0.16);
 }
 
 .listing-image-dots {
@@ -1798,19 +1800,26 @@ html[dir='rtl'] .auth-header {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18);
+  background: rgba(96, 56, 34, 0.28);
+  box-shadow: 0 0 0 1px rgba(96, 56, 34, 0.24);
 }
 
 .listing-image-dot-active {
-  background: #ffffff;
+  background: #603822;
 }
 
 .listing-image-placeholder {
-  border-bottom: 1px solid var(--border-soft);
+  border-bottom: 1px solid rgba(109, 66, 39, 0.16);
   background:
-    radial-gradient(circle at 18% 16%, rgba(29, 155, 240, 0.25), transparent 35%),
-    linear-gradient(180deg, rgba(20, 28, 38, 0.96), rgba(11, 14, 18, 0.96));
+    radial-gradient(circle at 18% 16%, rgba(186, 123, 84, 0.28), transparent 35%),
+    linear-gradient(180deg, #f3e2d1, #ead4bf);
+}
+
+.listing-card .seller-name,
+.listing-card p,
+.listing-card span,
+.listing-card strong {
+  color: #3d2619;
 }
 
 .listing-image-preview {
