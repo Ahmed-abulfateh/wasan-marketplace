@@ -37,6 +37,7 @@ type CheckoutPayload = {
 
 type MarketplaceContextValue = {
   isReady: boolean
+  bootstrapError: string | null
   session: Session | null
   listings: Listing[]
   favoriteIds: string[]
@@ -69,12 +70,32 @@ type MarketplaceContextValue = {
 
 const MarketplaceContext = createContext<MarketplaceContextValue | undefined>(undefined)
 
+const emptyStore: MarketplaceStore = {
+  session: null,
+  listings: [],
+  favoriteIds: [],
+  cartIds: [],
+  orders: [],
+  pendingSellers: [],
+}
+
 function MarketplaceProvider({ children }: PropsWithChildren) {
   const [store, setStore] = useState<MarketplaceStore | null>(null)
   const [lastCheckout, setLastCheckout] = useState<CheckoutConfirmation | null>(null)
+  const [bootstrapError, setBootstrapError] = useState<string | null>(null)
 
   useEffect(() => {
-    void marketplaceApi.getStore().then(setStore)
+    void (async () => {
+      try {
+        const initialStore = await marketplaceApi.getStore()
+        setStore(initialStore)
+        setBootstrapError(null)
+      } catch (error) {
+        const message = error instanceof Error ? error.message : 'Could not load marketplace data.'
+        setBootstrapError(message)
+        setStore(emptyStore)
+      }
+    })()
   }, [])
 
   const listings = store?.listings ?? []
@@ -96,6 +117,7 @@ function MarketplaceProvider({ children }: PropsWithChildren) {
 
   const value: MarketplaceContextValue = {
     isReady: store !== null,
+    bootstrapError,
     session: store?.session ?? null,
     listings,
     favoriteIds,

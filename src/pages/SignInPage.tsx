@@ -8,7 +8,7 @@ import marketplaceApi from '../lib/marketplaceApi'
 
 function SignInPage() {
   const { copy } = useLanguage()
-  const { isReady, session, signIn } = useMarketplace()
+  const { bootstrapError, isReady, session, signIn } = useMarketplace()
   const navigate = useNavigate()
   const location = useLocation()
   const [form, setForm] = useState({ identifier: '', password: '' })
@@ -72,6 +72,7 @@ function SignInPage() {
           <LanguageSwitcher />
         </div>
         {error ? <p className="form-notice form-notice-error">{error}</p> : null}
+        {bootstrapError ? <p className="form-notice form-notice-error">{bootstrapError}</p> : null}
         <form className="form-grid auth-form" onSubmit={handleSignIn}>
           <input
             value={form.identifier}
