@@ -434,24 +434,44 @@ html[dir='rtl'] .header-profile-dropdown {
 }
 
 .auth-panel input {
-  background: rgba(255, 252, 248, 0.92);
-  border-color: rgba(125, 68, 31, 0.24);
+  background: #fffaf4;
+  border: 1.25px solid rgba(125, 68, 31, 0.34);
+  color: #2f1d13;
+  color-scheme: light;
 }
 
 .auth-panel select {
-  background: rgba(255, 252, 248, 0.92);
-  border-color: rgba(125, 68, 31, 0.24);
+  background: #fffaf4;
+  border: 1.25px solid rgba(125, 68, 31, 0.34);
   color: #2f1d13;
+  color-scheme: light;
+}
+
+.auth-panel input::placeholder {
+  color: #8d6953;
+  opacity: 1;
+}
+
+.auth-panel input:hover,
+.auth-panel select:hover {
+  border-color: rgba(125, 68, 31, 0.46);
 }
 
 .auth-panel input:focus {
-  border-color: rgba(162, 92, 47, 0.42);
-  box-shadow: 0 0 0 3px rgba(162, 92, 47, 0.14);
+  border-color: rgba(162, 92, 47, 0.55);
+  box-shadow: 0 0 0 3px rgba(162, 92, 47, 0.18);
 }
 
 .auth-panel select:focus {
-  border-color: rgba(162, 92, 47, 0.42);
-  box-shadow: 0 0 0 3px rgba(162, 92, 47, 0.14);
+  border-color: rgba(162, 92, 47, 0.55);
+  box-shadow: 0 0 0 3px rgba(162, 92, 47, 0.18);
+}
+
+.auth-panel input:-webkit-autofill,
+.auth-panel input:-webkit-autofill:hover,
+.auth-panel input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #2f1d13;
+  box-shadow: 0 0 0 1000px #fffaf4 inset;
 }
 
 .auth-role-field {
@@ -466,6 +486,29 @@ html[dir='rtl'] .header-profile-dropdown {
 
 .auth-reset-summary {
   margin-bottom: 0.75rem;
+}
+
+.auth-panel .language-switch {
+  gap: 0.45rem;
+}
+
+.auth-panel .role-chip {
+  border-color: rgba(125, 68, 31, 0.32);
+  background: rgba(255, 248, 240, 0.92);
+  color: #4d3323;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.auth-panel .role-chip:hover {
+  border-color: rgba(125, 68, 31, 0.46);
+  background: rgba(255, 242, 228, 0.98);
+}
+
+.auth-panel .role-chip-active {
+  border-color: rgba(125, 68, 31, 0.58);
+  background: linear-gradient(180deg, #7d441f 0%, #5f3015 100%);
+  color: #fff8ef;
 }
 
 .auth-actions {
