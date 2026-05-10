@@ -64,7 +64,7 @@ MONGODB_URI=<set in Render dashboard>
 PORT=10000
 JWT_SECRET=your_jwt_secret_key
 FRONTEND_URL=https://ahmed-abulfateh.github.io
-FRONTEND_BASENAME=/marketplace.tsx
+FRONTEND_BASENAME=/wasan-marketplace
 ```
 
 ### Optional for Email Support

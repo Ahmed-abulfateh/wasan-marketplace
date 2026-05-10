@@ -96,4 +96,4 @@ Visit: `https://your-render-url/api/health`
 1. Update `.env.production` with your Render API URL
 2. Rebuild frontend
 3. Push to GitHub
-4. Test authentication at `https://ahmed-abulfateh.github.io/marketplace.tsx/`
+4. Test authentication at `https://ahmed-abulfateh.github.io/wasan-marketplace/`

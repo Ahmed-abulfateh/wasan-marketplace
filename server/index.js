@@ -86,7 +86,7 @@ const mailTransport =
 const mailFromAddress = process.env.SMTP_FROM || process.env.WORKSPACE_EMAIL || process.env.SMTP_USER || 'no-reply@signal-market.local'
 
 const frontendBasePath = (() => {
-  const configuredBasePath = String(process.env.FRONTEND_BASENAME ?? '/marketplace.tsx').trim()
+  const configuredBasePath = String(process.env.FRONTEND_BASENAME ?? '/wasan-marketplace').trim()
 
   if (!configuredBasePath || configuredBasePath === '/') {
     return ''

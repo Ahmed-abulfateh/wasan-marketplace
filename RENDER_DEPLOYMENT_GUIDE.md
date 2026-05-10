@@ -28,7 +28,7 @@ In the Render dashboard, add these environment variables to your service:
 MONGODB_URI=<your MongoDB Atlas URI>
 JWT_SECRET=your_jwt_secret_key_here
 FRONTEND_URL=https://ahmed-abulfateh.github.io
-FRONTEND_BASENAME=/marketplace.tsx
+FRONTEND_BASENAME=/wasan-marketplace
 PORT=10000
 ```
 
@@ -90,7 +90,7 @@ After your backend is deployed:
 
 ### Step 6: Test
 
-1. Go to: `https://ahmed-abulfateh.github.io/marketplace.tsx/`
+1. Go to: `https://ahmed-abulfateh.github.io/wasan-marketplace/`
 2. Try signing in with the admin account:
    - Email: `admin@test.com`
    - Password: `TestPass123!`
@@ -133,4 +133,4 @@ Make sure your Render service is fully deployed and the URL is correct
 2. Check browser Network tab (F12 → Network) to see API requests
 3. Verify MongoDB connection is working with `/api/health` endpoint
 
-Visit your deployment page: `https://ahmed-abulfateh.github.io/marketplace.tsx/deployment`
+Visit your deployment page: `https://ahmed-abulfateh.github.io/wasan-marketplace/deployment`
