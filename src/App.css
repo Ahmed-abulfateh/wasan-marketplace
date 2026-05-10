@@ -1233,6 +1233,26 @@ html[dir='rtl'] .auth-header {
   color: var(--heading);
 }
 
+/* Keep auth fields readable (override dark global form skin). */
+.auth-panel .form-grid input,
+.auth-panel .form-grid select {
+  background: #f4e1cf;
+  border: 1.25px solid rgba(125, 68, 31, 0.34);
+  color: #2f1d13;
+  color-scheme: light;
+}
+
+.auth-panel .form-grid input::placeholder {
+  color: #8d6953;
+  opacity: 1;
+}
+
+.auth-panel .form-grid input:focus,
+.auth-panel .form-grid select:focus {
+  border-color: rgba(162, 92, 47, 0.55);
+  box-shadow: 0 0 0 3px rgba(162, 92, 47, 0.18);
+}
+
 .form-grid textarea {
   min-height: 8rem;
   resize: vertical;
