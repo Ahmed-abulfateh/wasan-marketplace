@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
 
 :root {
-  --background: #000000;
-  --background-2: #0b0f14;
-  --panel: rgba(0, 0, 0, 0.82);
-  --panel-strong: #111318;
-  --panel-text: #e7e9ea;
-  --border: rgba(231, 233, 234, 0.16);
-  --border-soft: rgba(231, 233, 234, 0.1);
-  --text: #e7e9ea;
-  --muted: #71767b;
-  --heading: #f7f9f9;
-  --accent: #1d9bf0;
-  --accent-strong: #8ecdf8;
+  --background: #f6e6d4;
+  --background-2: #ecd2b6;
+  --panel: rgba(255, 248, 240, 0.88);
+  --panel-strong: #f7ebdd;
+  --panel-text: #3d281a;
+  --border: rgba(111, 73, 38, 0.18);
+  --border-soft: rgba(111, 73, 38, 0.12);
+  --text: #4d3323;
+  --muted: #856552;
+  --heading: #2f1d13;
+  --accent: #a25c2f;
+  --accent-strong: #7d441f;
   --button-text: #ffffff;
-  --shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  --shadow: 0 16px 40px rgba(125, 68, 31, 0.16);
   --body-font: 'IBM Plex Sans', 'Avenir Next', 'Segoe UI', sans-serif;
   --heading-font: 'Space Grotesk', 'Avenir Next Condensed', 'Trebuchet MS', sans-serif;
   --body-font-ar: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
@@ -49,8 +49,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background:
-    radial-gradient(circle at top, rgba(29, 155, 240, 0.12), transparent 18%),
-    linear-gradient(180deg, #000000 0%, #0b0f14 100%);
+    radial-gradient(circle at top, rgba(162, 92, 47, 0.18), transparent 20%),
+    linear-gradient(180deg, #f7e7d7 0%, #ead0b5 100%);
 }
 
 html[dir='rtl'] body {

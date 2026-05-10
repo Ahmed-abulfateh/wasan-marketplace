@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 220" role="img" aria-labelledby="title desc">
+  <title id="title">Wasan logo</title>
+  <desc id="desc">A warm brown wordmark for Wasan marketplace.</desc>
+  <rect width="560" height="220" rx="30" fill="none" />
+  <g transform="translate(26 34)">
+    <path d="M36 21h96c15 0 27 12 27 27 0 14-11 25-25 25H86l18 39h-34L36 21Z" fill="#a25c2f"/>
+    <path d="M28 88h61l-7 17H28z" fill="#7d441f"/>
+    <path d="M28 118h49l-6 15H28z" fill="#c57a43"/>
+    <path d="M28 145h39l-5 13H28z" fill="#8a4d23"/>
+    <circle cx="87" cy="82" r="6" fill="#f7ebdd" opacity="0.95"/>
+  </g>
+  <text x="190" y="118" fill="#2f1d13" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="700" letter-spacing="0.5">Wasan</text>
+  <text x="193" y="164" fill="#7d441f" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="500" letter-spacing="3">MARKETPLACE</text>
+</svg>
