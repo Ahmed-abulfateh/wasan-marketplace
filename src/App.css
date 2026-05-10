@@ -1472,7 +1472,7 @@ html[dir='rtl'] .auth-header {
   max-height: 18rem;
   border-radius: 14px;
   border: 1px solid var(--border-soft);
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .gallery-thumb-grid,
