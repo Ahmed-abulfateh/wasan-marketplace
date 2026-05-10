@@ -859,8 +859,8 @@ html[dir='rtl'] .split-copy p {
 .badge {
   padding: 0.55rem 0.8rem;
   border-radius: 999px;
-  background: rgba(22, 24, 28, 0.88);
-  border: 1px solid var(--border-soft);
+  background: rgba(255, 248, 240, 0.7);
+  border: 1px solid rgba(111, 73, 38, 0.2);
   color: var(--heading);
   font-size: 0.86rem;
   letter-spacing: 0.04em;
@@ -1134,6 +1134,9 @@ html[dir='rtl'] .auth-header {
 
 .search-panel {
   padding: 1rem 1.25rem;
+  border: 1px solid rgba(111, 73, 38, 0.16);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255, 247, 238, 0.92), rgba(245, 228, 210, 0.88));
 }
 
 .search-field {
@@ -1145,27 +1148,27 @@ html[dir='rtl'] .auth-header {
   width: 100%;
   min-height: 3rem;
   padding: 0.85rem 1rem;
-  border: 1px solid var(--border-soft);
+  border: 1px solid rgba(111, 73, 38, 0.22);
   border-radius: 16px;
-  background: rgba(22, 24, 28, 0.96);
-  color: var(--heading);
+  background: rgba(255, 251, 246, 0.96);
+  color: #2f1d13;
 }
 
 .search-field select {
   width: 100%;
   min-height: 3rem;
   padding: 0.85rem 1rem;
-  border: 1px solid var(--border-soft);
+  border: 1px solid rgba(111, 73, 38, 0.22);
   border-radius: 16px;
-  background: rgba(22, 24, 28, 0.96);
-  color: var(--heading);
+  background: rgba(255, 251, 246, 0.96);
+  color: #2f1d13;
 }
 
 .search-field input:focus-visible,
 .button:focus-visible,
 .role-chip:focus-visible,
 .order-action:focus-visible {
-  outline: 2px solid rgba(29, 155, 240, 0.5);
+  outline: 2px solid rgba(162, 92, 47, 0.5);
   outline-offset: 2px;
 }
 
@@ -1504,25 +1507,8 @@ html[dir='rtl'] .auth-header {
   color: var(--muted);
 }
 
-.product-price-stack {
-  display: grid;
-  gap: 0.35rem;
-  margin-bottom: 1rem;
-}
-
 .price-strike {
   text-decoration: line-through;
-}
-
-.product-discount-badge {
-  width: fit-content;
-}
-
-.promo-list,
-.guidance-list,
-.product-description-list {
-  margin: 0;
-  padding-left: 1.1rem;
 }
 
 .promo-list li + li,
